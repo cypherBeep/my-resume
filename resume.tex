@@ -1,0 +1,203 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+% 
+% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
+% 
+% This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% -----------------------------------------------------------
+% Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+% -----------------------------------------------------------
+% Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+% -----------------------------------------------------------
+% Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-4pt}}
+\newcommand{\resheading}[1]{
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+      \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-11pt}
+}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+
+  \end{tabular*}\vspace{-6pt}}
+
+\newcommand{\school}[4]{\vspace{1.5mm}
+  \textbf{#1} \hfill #2 \textit{#3} \hfill \textit{#4} \vspace{1.5mm}
+}
+
+\newcommand{\job}[4]{
+  \textbf{#1} \hfill #2 \hfill \textit{#3} \hfill \textit{#4}
+}
+
+\newcommand{\skill}[2]{\vspace{1.5mm}
+  \textbf{#1} #2
+}
+
+\newcommand{\certificate}[3]{
+  \textbf{#1} #2 \hfill \textit{#3} 
+}
+
+\newcommand{\project}[4]{ \vspace{1.5mm}
+  \textbf{#1} #2 \hfill \textit{#3}#4 \vspace{1.5mm}
+}
+
+\newcommand{\award}[4]{ \vspace{1.5mm}
+  \textbf{#1} #2 \hfill \textit{#3} #4 \vspace{1.5mm}
+}
+% -----------------------------------------------------------
+\begin{document}
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Sanad Kadu} & \textit{sanaddilipkadu@gmail.com | +91-9604484805 | India | https://github.com/cypherBeep}
+\end{tabular*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{itemize}[leftmargin=*]
+  
+\item[]
+  \school
+  {UPES}
+  {Dehradun, Uttarakhand\\}
+  {B.Tech CSE - Spl. CC\&VT, GPA: 7.89}
+  {Aug 2018 - Apr 2022}
+\item[]
+  \school
+  {Vinyak Vidya Mandir}
+  {Amravati, Maharashtra\\}
+  {State Board XII Std, Percentage: 85.85\%}
+  {}
+\item[]
+  \school
+  {School Of Scholars}
+  {Amravati, Maharashtra\\}
+  {CBSE Class 10th, Percentage: 86.2\%}
+  {}
+  
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\resheading{Projects}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{itemize}[leftmargin=*]
+\item[]
+  \project
+  {Plagarism Detector}
+  {C, GCC, CMake}
+  {https://github.com/cypherBeep/Plagiarism-Detection}
+  {\\A C excecutable which can detect percent of plagarism between two text files using different plagarism detection algorithms that use k-grams viz. KMP, Winnowing, Rabin-Karp and Naive String Matching.}
+\item[]
+  \project
+  {Debord Bot}
+  {Javascript, Heroku, Node JS}
+  {https://github.com/cypherBeep/debord-bot}
+  {\\A bot which uses puppeteer package to fetch quotes of Guy Debord from internet and strore them in spreadsheets on cloud then tweet those using Twitter API at regular intervals.}
+\item[]
+  \project
+  {Virtual Machine Translator}
+  {Javascript, Assembly, HDL}
+  {https://github.com/cypherBeep/nand2tetris}
+  {\\An stack based implementation of the classic VM Translator which can translate Hack language assembly code to VM code for a 16-bit machine architecture made from scratch.}
+\item[]
+  \project
+  {Hayek Token}
+  {Solidity, Truffle, Javascript}
+  {https://github.com/cypherBeep/Hayek-Token}
+  {\\Implementation of crypto token as per ERC20 standard built on Ethereum to use as an asset in the hospitality industry and loyalty programs.}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\resheading{Skills and Interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{itemize}[leftmargin=*]
+  \setlength\itemsep{0em}
+\item[] \skill{* Programming Languages:}{Javascript (preferred), C, Java, Rust, Bash, Solidity, Lisp.}
+\item[] \skill{* Technologies and Tools/Frameworks:}{Node JS, JQuery, PostgreSQL, Emacs, Linux, Distributed Systems, Git, Truffle.}
+\item[] \skill{* Technical Skills:}{Software Engineering, System Administration, Backend Managment.}
+\item[] \skill{* Interests:}{Decentralization Technologies, Blockchains, Ethereum Development, Cloud Computing.}
+\item[] \skill{*}{Discovering and implementing new ideas. Give me an API and a problem and I\textquotesingle{}ll figure it out.}
+\item[] \skill{*}{I can readily learn and adapt to a new discpline, area or environmet and start pushing real results quickly.}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\resheading{Certificates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{itemize}[leftmargin=*]
+\item[]
+  \certificate
+  {Build a Modern Computer from First Principles: From Nand to Tetris\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/ZLWJJD4NS6A3}
+\item[]
+  \certificate
+  {Software Development Processes and Methodologies\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/QG39TCSVBRTZ}
+\item[]
+  \certificate
+  {Introduction to Software Product Management\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/PH8C62QQPWP9}
+\item[]
+  \certificate
+  {Introduction to Git and GitHub\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/EBSSXZXK428D}
+\item[]
+  \certificate
+  {The Arts and Science of Relationships: Understanding Human Needs\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/ERP6V6WKVKUB}
+\item[]
+  \certificate
+  {Introduction to Psychology\\}
+  {Issuing Organization: Coursera}
+  {https://www.coursera.org/account/accomplishments/certificate/WJ3RR4WXTSKM}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\resheading{Achievements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{itemize}[leftmargin=*]
+\item[]
+  \award
+  {Project Expo Winner}
+  {Dec 2020}
+  {UPES}
+  {\\Won the best project award for Plagarism Detector in annual university competition.}
+\end{itemize}
+\ 
+\end{document}
