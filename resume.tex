@@ -10,7 +10,7 @@
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
+\usepackage{hyperref}
 
 % -----------------------------------------------------------
 % Edit these values as you see fit
@@ -63,11 +63,11 @@
 }
 
 \newcommand{\certificate}[3]{
-  \textbf{#1} #2 \hfill \textit{#3} 
+  \textbf{#1} #2 \hfill \textit{\url{#3}} 
 }
 
 \newcommand{\project}[4]{ \vspace{1.5mm}
-  \textbf{#1} #2 \hfill \textit{#3}#4 \vspace{1.5mm}
+  \textbf{#1} #2 \hfill \textit{\url{#3}}#4 \vspace{1.5mm}
 }
 
 \newcommand{\award}[4]{ \vspace{1.5mm}
@@ -122,7 +122,7 @@
   {\\A bot which uses puppeteer package to fetch quotes of Guy Debord from internet and strore them in spreadsheets on cloud then tweet those using Twitter API at regular intervals.}
 \item[]
   \project
-  {Virtual Machine Translator}
+  {VM Translator}
   {Javascript, Assembly, HDL}
   {https://github.com/cypherBeep/nand2tetris}
   {\\An stack based implementation of the classic VM Translator which can translate Hack language assembly code to VM code for a 16-bit machine architecture made from scratch.}
